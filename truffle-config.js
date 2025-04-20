@@ -100,7 +100,7 @@ module.exports = {
       host: "127.0.0.1", // Localhost (default: none)
       port: 7545, // Standard Ethereum port (default: none)
       network_id: "5777", // Any network (default: none)
-  }
+    }
   },
 
   // Set default mocha options here, use special reporters, etc.
@@ -112,6 +112,13 @@ module.exports = {
   compilers: {
     solc: {
       version: "0.8.19",      // Fetch exact version from solc-bin (default: truffle's version)
+      settings: {
+        optimizer: {
+          enabled: true,
+          runs: 100,
+        },
+        viaIR: true,
+      },     // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
