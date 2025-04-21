@@ -14,14 +14,14 @@ function App() {
   const [signerGlob , setSignerGlob] = useState(null);
 
   const initcontract = async()=>{
-    let contract = new Contract("0xC5bA71490A8CEF8e34B8c5c7A7B8a327EdF125fa" , attacker.abi ,provider);
-    let contracttmpsinger = new Contract("0xC5bA71490A8CEF8e34B8c5c7A7B8a327EdF125fa",attacker.abi,signer);
+    let contract = new Contract("0xBAe0B37DF7ad8Bb6c73bBC1aA24286C78B55aDe6" , attacker.abi ,provider);
+    let contracttmpsinger = new Contract("0xBAe0B37DF7ad8Bb6c73bBC1aA24286C78B55aDe6",attacker.abi,signer);
     setContract(contract);
     setWriterContract(contracttmpsinger);
 
 
-    let vcontract = new Contract("0xAC499D39AE5D365740Fc17c3ff7B4e83918aC804" , Victim.abi ,provider);
-    let vcontracttmpsinger = new Contract("0xAC499D39AE5D365740Fc17c3ff7B4e83918aC804",Victim.abi,signer);
+    let vcontract = new Contract("0xC94996cCcE002794859f6618E8DFFe3CbDf3E195" , Victim.abi ,provider);
+    let vcontracttmpsinger = new Contract("0xC94996cCcE002794859f6618E8DFFe3CbDf3E195",Victim.abi,signer);
     setVcontract(vcontract);
     setVwriterContract(vcontracttmpsinger);
 
@@ -40,7 +40,7 @@ function App() {
     })
   }
   const showaccount = async()=>{
-    let balance = await vcontract.getvalutbalance();
+    let balance = await vcontract.getbalances();
     alert(balance);
   }
   const withdraw = async()=>{

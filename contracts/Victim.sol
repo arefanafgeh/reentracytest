@@ -2,7 +2,7 @@
 pragma solidity 0.8.19;
 
 contract Victim {
-    mapping(address=>uint256) balances;
+    mapping(address=>uint256) public balances;
 
     function deposit() external payable{
         balances[msg.sender]+=msg.value;
